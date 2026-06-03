@@ -1,1 +1,32 @@
-{"gateway":{"controlUi":{"allowedOrigins":["https://openclaw-production-301b.up.railway.app"]}}}
+{
+  "gateway": {
+    "controlUi": {
+      "allowedOrigins": [
+        "https://openclaw-production-301b.up.railway.app"
+      ]
+    }
+  },
+  "models": {
+    "providers": {
+      "ollama": {
+        "apiKey": "ollama-local",
+        "baseUrl": "http://ollama.railway.internal:11434",
+        "api": "ollama",
+        "timeoutSeconds": 300,
+        "models": [
+          {
+            "id": "llama3.2:1b",
+            "name": "Llama 3.2 1B"
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/llama3.2:1b"
+      }
+    }
+  }
+}
