@@ -1,4 +1,4 @@
-﻿# Railway-compatible build. Derived from Dockerfile but with two changes:
+ Railway-compatible build. Derived from Dockerfile but with two changes:
 # 1. --mount=type=bind replaced with COPY (Railway builder only supports type=cache)
 # 2. --mount=type=cache removed (Railway requires a project-scoped cacheKey prefix
 #    that isn't practical to hardcode; removing them makes builds slower but correct)
