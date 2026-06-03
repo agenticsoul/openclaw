@@ -1,9 +1,1 @@
-
-  "gateway": {
-    "controlUi": {
-      "allowedOrigins": [
-        "https://openclaw-production-301b.up.railway.app"
-      ]
-    }
-  }
-}
+{"gateway":{"controlUi":{"allowedOrigins":["https://openclaw-production-301b.up.railway.app"]}}}
