@@ -2,6 +2,7 @@
   "gateway": {
     "controlUi": {
       "allowedOrigins": [
+        "https://openclaw-production-d778.up.railway.app",
         "https://openclaw-production-301b.up.railway.app"
       ]
     }
