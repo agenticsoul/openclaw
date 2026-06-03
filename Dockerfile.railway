@@ -1,4 +1,4 @@
- Railway-compatible build. Derived from Dockerfile but with two changes:
+# Railway-compatible build. Derived from Dockerfile but with two changes:
 # 1. --mount=type=bind replaced with COPY (Railway builder only supports type=cache)
 # 2. --mount=type=cache removed (Railway requires a project-scoped cacheKey prefix
 #    that isn't practical to hardcode; removing them makes builds slower but correct)
@@ -235,10 +235,10 @@ RUN install -d -m 0755 -o node -g node /home/node/.config && \
 ARG CACHE_BUST=1
 ENV NODE_ENV=production
 
-COPY --chown=node:node openclaw.json /home/node/.openclaw/openclaw.json
+COPY openclaw.json /home/node/.openclaw/openclaw.json
 USER node
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=5 \
   CMD sh -c "node -e \"fetch('http://127.0.0.1:${PORT:-18789}/healthz').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""
 ENTRYPOINT ["tini", "-s", "--"]
-CMD ["sh", "-c", "node -e \"require('fs').mkdirSync('/home/node/.openclaw',{recursive:true});require('fs').writeFileSync('/home/node/.openclaw/openclaw.json',JSON.stringify({gateway:{controlUi:{allowedOrigins:['https://openclaw-production-301b.up.railway.app']}}}))\" && node openclaw.mjs gateway --allow-unconfigured --bind lan --port ${PORT:-18789}"]
+CMD ["sh", "-c", "node openclaw.mjs gateway --allow-unconfigured --bind lan --port ${PORT:-18789}"]
