@@ -4,7 +4,8 @@
       "mode": "token"
     },
     "controlUi": {
-      "allowedOrigins": []
+      "allowedOrigins": [],
+      "dangerouslyAllowHostHeaderOriginFallback": true
     }
   },
   "models": {
