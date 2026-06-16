@@ -236,6 +236,8 @@ ARG CACHE_BUST=1
 ENV NODE_ENV=production
 
 COPY openclaw.json /home/node/.openclaw/openclaw.json
+RUN install -d -m 0700 /root/.openclaw && \
+    cp /home/node/.openclaw/openclaw.json /root/.openclaw/openclaw.json
 USER node
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=5 \
