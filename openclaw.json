@@ -8,28 +8,5 @@
       "allowedOrigins": [],
       "dangerouslyAllowHostHeaderOriginFallback": true
     }
-  },
-  "models": {
-    "providers": {
-      "ollama": {
-        "apiKey": "ollama-local",
-        "baseUrl": "http://ollama.railway.internal:11434",
-        "api": "ollama",
-        "timeoutSeconds": 300,
-        "models": [
-          {
-            "id": "gemma4:latest",
-            "name": "Gemma 4"
-          }
-        ]
-      }
-    }
-  },
-  "agents": {
-    "defaults": {
-      "model": {
-        "primary": "ollama/gemma4:latest"
-      }
-    }
   }
 }
