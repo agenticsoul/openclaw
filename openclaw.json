@@ -4,9 +4,7 @@
       "mode": "token"
     },
     "controlUi": {
-      "allowedOrigins": [
-        "https://agentpixelclaw.up.railway.app"
-      ]
+      "allowedOrigins": []
     }
   },
   "models": {
